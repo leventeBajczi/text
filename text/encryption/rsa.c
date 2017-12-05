@@ -101,6 +101,7 @@ int decrypt_text(char** cipher, int* cipherlen, char* key_s, int keylen)
 #ifdef ENABLE_DEBUGGING
         printf ("Failure: %s/%s\n", gcry_strsource (err), gcry_strerror (err));
 #endif
+        abort();
     }
 
     gcry_sexp_sprint(plain, GCRYSEXP_FMT_CANON, rsa_buf, private_size(keylen));
