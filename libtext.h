@@ -3,6 +3,9 @@
 
 #define KEYLEN 256
 
+#define ENABLE_DEBUGGING
+
+
 #ifndef BASE64_H
 #define BASE64_H
 
@@ -84,9 +87,12 @@ uint8_t* genrand_urandom(long);
 #include <gcrypt.h>
 
 char* load_public_key();
-char* encrypt_rsa(char*, char*, int);
+int encrypt_text(char**, int*, char*, int);
 void decrypt_rsa(char*, int);
-void generate_keypair();
+int generate_keypair(int, char**, int*, char**, int*);
+int get_length(int);
+size_t public_size(int);
+size_t private_size(int);
 
 #endif
 

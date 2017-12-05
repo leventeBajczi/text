@@ -4,8 +4,8 @@ text:	*.c *.h text/*.c  text/*/*.c text/*/*/*.s
 		build/text
 		rm *.o
 
-gdb:	*.c *.h text/*.c text/*/*.h text/*/*.c text/*/*/*.h text/*/*/*.s
+gdb:	*.c *.h text/*.c  text/*/*.c text/*/*/*.s
 		gcc -c text/*/*/*.s -g
-		gcc *.c *.h text/*.c text/*/*.h text/*/*.c text/*/*/*.h -o build/text -g
+		gcc -g -I. *.c text/*.c  text/*/*.c *.o -o build/text -lgcrypt
 		gdb build/text
 		rm *.o
