@@ -80,9 +80,9 @@ uint8_t* genrand_urandom(long);
 #include <unistd.h>
 #include <gcrypt.h>
 
-int encrypt_text(char**, int*, char*, int);
-int decrypt_text(char**, int*, char*, int);
-int generate_keypair(int, char**, int*, char**, int*);
+void encrypt_text(char**, int*, char*, int);
+void decrypt_text(char**, int*, char*, int);
+void generate_keypair(int, char**, int*, char**, int*);
 int get_length(int);
 size_t public_size(int);
 size_t private_size(int);

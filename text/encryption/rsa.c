@@ -1,7 +1,7 @@
 #include <libtext.h>
 
 
-int encrypt_text(char** plain, int* ciphlen, char* key_s, int keylen)
+void encrypt_text(char** plain, int* ciphlen, char* key_s, int keylen)
 {
     gcry_sexp_t enkey;
     gcry_mpi_t msg;
@@ -70,7 +70,7 @@ int encrypt_text(char** plain, int* ciphlen, char* key_s, int keylen)
 
 }
 
-int decrypt_text(char** cipher, int* cipherlen, char* key_s, int keylen)
+void decrypt_text(char** cipher, int* cipherlen, char* key_s, int keylen)
 {
     gcry_sexp_t dekey;   
     gcry_sexp_t plain;   
@@ -124,7 +124,7 @@ int decrypt_text(char** cipher, int* cipherlen, char* key_s, int keylen)
 Generates a keylen sized keypair to use with RSA. It's char* representation will be given back as two freshly reallocated strings.
 */
 
-int generate_keypair(int keylen, char** key_pr, int* prlen, char** key_pub, int* publen)
+void generate_keypair(int keylen, char** key_pr, int* prlen, char** key_pub, int* publen)
 {
     gcry_error_t err = 0;
     gcry_sexp_t rsa_parms;
