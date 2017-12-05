@@ -6,7 +6,7 @@ void test_sha256();
 
 int main()
 {
-    //test_rsa();
+    test_rsa();
     test_aes();
     test_sha256();
     return 0;
