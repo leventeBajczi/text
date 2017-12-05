@@ -1,10 +1,10 @@
-#include "headers/rsa.h"
+#include <libtext.h>
 
 char* password = "abcd";
 
 char* load_public_key()
 {
-    return read_key("public.key"); 
+    //return read_key("public.key"); 
 }
 char* encrypt_rsa(char* key, char* content, int len)
 {
@@ -58,7 +58,7 @@ char* encrypt_rsa(char* key, char* content, int len)
 }
 void decrypt_rsa(char* content, int len)
 {
-    char* key = read_key("private.key");
+    char* key/* = read_key("private.key")*/;
 
     if(!password);//decrypt_aes
 
@@ -187,7 +187,7 @@ void generate_keypair()
     encrypt_private((char**)&rsa_buf, len);
     char *priv = encode_base64(rsa_buf, len);
     free(rsa_buf);
-    write_pem("PRIVATE KEY", priv, "private.key");  
+    //write_pem("PRIVATE KEY", priv, "private.key");  
 
     rsa_data = gcry_sexp_nth(rsa_keypair, 1);
     rsa_buf = calloc(1, KEYLEN*3);
@@ -209,7 +209,7 @@ void generate_keypair()
 
     priv = encode_base64(rsa_buf, len);
     free(rsa_buf);
-    write_pem("PUBLIC KEY", priv, "public.key");  
+    //write_pem("PUBLIC KEY", priv, "public.key");  
 
     gcry_sexp_release(rsa_keypair);
     gcry_sexp_release(rsa_parms);

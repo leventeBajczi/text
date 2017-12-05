@@ -1,4 +1,4 @@
-#include "headers/aes.h"
+#include <libtext.h>
 
 gcry_cipher_hd_t aes_ciph;
 char* aes_key;
