@@ -3,7 +3,7 @@
 gcry_cipher_hd_t aes_ciph;
 char* aes_key;
 
-extern char* password;
+char* password;
 
 void handle_aes_key(char* key)
 {
