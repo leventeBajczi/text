@@ -3,8 +3,6 @@
 
 #define KEYLEN 256
 
-#define ENABLE_DEBUGGING
-
 
 #ifndef BASE64_H
 #define BASE64_H
@@ -91,5 +89,11 @@ size_t private_size(int);
 
 #endif
 
+#ifndef SHA256_H
+#define SHA256_H
+
+void sha256_text(char**);
+
+#endif
 
 #endif
