@@ -55,6 +55,7 @@ void replace_str(char*, char, char*);
 #include <gcrypt.h>
 
 void encrypt_aes256_text(char**, int*, char*);
+void decrypt_aes256_text(char**, int*, char*);
 void generate_aes256_key();
 
 

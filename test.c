@@ -53,5 +53,9 @@ void test_aes()
 
     printf("\n\n%s\n", encode_base64(msg, len));
 
+    decrypt_aes256_text(&msg, &len, key);
+
+    printf("\n\n%s\n", msg);
+
 
 }
