@@ -2,7 +2,7 @@
 #define LIBTEXT_H
 
 #define KEYLEN 256
-
+#define ENABLE_DEBUGGING
 
 #ifndef BASE64_H
 #define BASE64_H
@@ -16,6 +16,7 @@ char* encode_base64(uint8_t*, int);
 uint8_t* decode_base64(char*);
 uint8_t get_char(char);
 char to_base64_char(uint8_t);
+int get_base64_decoded_length(char* );
 #endif
 
 #ifndef HTTP_H

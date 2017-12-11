@@ -63,3 +63,12 @@ uint8_t get_char(char c)
     else if(c == '+') return 62;
     else return 63;
 }
+
+int get_base64_decoded_length(char* base64)
+{
+    int size = strlen(base64);
+    int save = size;
+    while(base64[size-1] == '=') size--;
+    return save/4*3 - (save-size);
+    
+}
