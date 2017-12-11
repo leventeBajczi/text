@@ -44,7 +44,7 @@ void encrypt_aes256_text(char** plain, int* length, char* key)
         abort();
     }
 
-    free(*plain);
+    //free(*plain);
     *plain = ciph;
     *length = ciphlen;
 

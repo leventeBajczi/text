@@ -1,8 +1,8 @@
 lib:	*.h text/*.c  text/*/*.c text/*/*/*.s
 		rm -rf build
 		mkdir build
-		gcc -c -I. *.c text/*.c  text/*/*.c text/*/*/*.s -lgcrypt
-		ar rcs build/libtext.a *.o 
+		gcc -c -I. *.c text/*.c  text/*/*.c text/*/*/*.s -g -lgcrypt
+		ar rcs build/libtext.a *.o
 		rm *.o
 
 text:	*.c *.h text/*.c  text/*/*.c text/*/*/*.s
